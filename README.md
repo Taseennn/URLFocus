@@ -53,12 +53,6 @@ Edit `background.js` to add or remove sites:
 const blockedSites = ["facebook.com", "twitter.com", "instagram.com"];
 ```
 
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
 ## 🚀 Credits
 
 Created by Taseen
