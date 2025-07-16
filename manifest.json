@@ -1,0 +1,17 @@
+{
+    "manifest_version": 1,
+    "name": "URLFocus",
+    "version": "1.0",
+
+    "description": "Closes social media tabs automatically when they are opened.",
+
+    "icons": {
+        "48": "icons/border-48.png"
+    },
+
+    "background": {
+        "scripts": ["background-script.js"],
+        "persistent": true,
+        "type": "module"
+    }
+}
