@@ -6,8 +6,13 @@
   "icons": {
     "48": "icons/border-48.png"
   },
-  "permissions": ["tabs"],
+  "permissions": [
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background-script.js"
   }
 }
