@@ -3,6 +3,9 @@
   "name": "URLFocus",
   "version": "1.0",
   "description": "Closes social media tabs automatically when they are opened.",
+  "action": {
+    "default_icon": "icons/border-48.png"
+  },
   "icons": {
     "48": "icons/border-48.png"
   },

@@ -1,6 +1,16 @@
 const extensionAPI = typeof browser !== "undefined" ? browser : chrome;
 
-const blockedSites = ["facebook.com", "x.com", "instagram.com"];
+const blockedSites = [
+  "facebook.com",
+  "x.com",
+  "instagram.com",
+  "twitch.tv",
+  "youtube.com",
+  "spotify.com",
+  "snapchat.com",
+  "tiktok.com",
+  "reddit.com"
+];
 
 function closeTabs(tabs) {
   for (const tab of tabs) {

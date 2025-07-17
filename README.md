@@ -46,6 +46,12 @@
 * Facebook
 * Twitter (X)
 * Instagram
+* Twitch
+* YouTube
+* Spotify
+* Snapchat
+* TikTok
+* Reddit
 
 Edit `background-script.js` to add or remove sites:
 
