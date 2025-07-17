@@ -6,7 +6,8 @@
 
 ## 📂 Files
 
-* **`manifest.json`** — Defines extension metadata, permissions, and the background service worker.
+* **`manifest.json`** — Defines extension metadata, permissions, and the background service worker (FOR FIREFOX)
+* **`manifest-chrome.json`** — Defines extension metadata, permissions, and the background service worker (FOR CHROME)
 * **`background-script.js`** — Contains the logic to detect and close social media tabs.
 
 ---
@@ -35,9 +36,13 @@
 
 3. Enable **Developer Mode** (Chrome) or **This Firefox** (Firefox).
 
-4. Click **Load unpacked** (Chrome) or **Load Temporary Add-on** (Firefox) and select the project folder.
+4. 👉 **Pick the right manifest:**
+   - For **Chrome**, rename `manifest-chrome.json` to `manifest.json` in the project folder.
+   - For **Firefox**, no changes needed (the default `manifest.json` is correct).
 
-5. Open a social media site — the tab should close automatically.
+5. Click **Load unpacked** (Chrome) or **Load Temporary Add-on** (Firefox) and select the project folder.
+
+6. Open a social media site — the tab should close automatically.
 
 ---
 
