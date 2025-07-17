@@ -7,7 +7,7 @@
 ## 📂 Files
 
 * **`manifest.json`** — Defines extension metadata, permissions, and the background service worker.
-* **`background.js`** — Contains the logic to detect and close social media tabs.
+* **`background-script.js`** — Contains the logic to detect and close social media tabs.
 
 ---
 
@@ -47,7 +47,7 @@
 * Twitter (X)
 * Instagram
 
-Edit `background.js` to add or remove sites:
+Edit `background-script.js` to add or remove sites:
 
 ```js
 const blockedSites = ["facebook.com", "twitter.com", "instagram.com"];
