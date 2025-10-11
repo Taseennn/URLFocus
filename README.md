@@ -64,6 +64,10 @@ Edit `background-script.js` to add or remove sites:
 const blockedSites = ["facebook.com", "twitter.com", "instagram.com"];
 ```
 
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ## 🚀 Credits
 
 Created by Taseen
