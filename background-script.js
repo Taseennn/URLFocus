@@ -5,17 +5,40 @@ const blockedSites = [
   "x.com",
   "instagram.com",
   "twitch.tv",
-  "youtube.com",
-  "spotify.com",
   "snapchat.com",
   "tiktok.com",
-  "reddit.com"
+  "reddit.com",
 ];
+
+let blockingEnabled = true;
+extensionAPI.storage.local.get({ enabled: true }, ({ enabled }) => {
+  blockingEnabled = enabled;
+});
+
+extensionAPI.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+    if (msg.type === 'SET_BLOCKING') {
+    blockingEnabled = !!msg.enabled;
+    chrome.storage.local.set({ enabled: blockingEnabled });
+    
+    if (blockingEnabled) {
+      chrome.tabs.query({}, tabs => {
+        closeTabs(tabs);
+      });
+    }
+    sendResponse({ success: true });
+  }
+  return true;
+});
+
+function maybeclosetab(tab){
+  if(!blockingEnabled){return}
+  extensionAPI.tabs.remove(tab.id);
+}
 
 function closeTabs(tabs) {
   for (const tab of tabs) {
     if(closeTab(tab)) {
-        extensionAPI.tabs.remove(tab.id);
+       maybeclosetab(tab);
     }
   }
 }
@@ -29,15 +52,14 @@ extensionAPI.tabs.query({}).then(closeTabs);
 
 extensionAPI.tabs.onCreated.addListener((tab) => {
   if(closeTab(tab)) {
-    extensionAPI.tabs.remove(tab.id);
+    maybeclosetab(tab);
   }
 });
-
 
 extensionAPI.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.url) {
     if(closeTab(tab)) {
-        extensionAPI.tabs.remove(tab.id);
+        maybeclosetab(tab);
     }
   }
 });
