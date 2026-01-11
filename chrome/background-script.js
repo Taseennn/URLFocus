@@ -1,6 +1,6 @@
 const extensionAPI = typeof browser !== "undefined" ? browser : chrome;
 
-const blockedSites = [
+const DEFAULT_BLOCKEDSITES = [
   "facebook.com",
   "x.com",
   "instagram.com",
@@ -9,6 +9,21 @@ const blockedSites = [
   "tiktok.com",
   "reddit.com",
 ];
+
+// set to default blocked sites on install
+extensionAPI.runtime.onInstalled.addListener(() => { 
+  extensionAPI.storage.local.get({'blockedSites': null}, (result) => {
+    if (result.blockedSites === null) {
+      extensionAPI.storage.local.set({ blockedSites: DEFAULT_BLOCKEDSITES });
+    }
+  });
+});
+
+// get blocked sites from storage
+let blockedSites = [];
+extensionAPI.storage.local.get({ blockedSites: DEFAULT_BLOCKEDSITES }, (result) => {
+  blockedSites = result.blockedSites;
+});
 
 let blockingEnabled = true;
 extensionAPI.storage.local.get({ enabled: true }, ({ enabled }) => {
