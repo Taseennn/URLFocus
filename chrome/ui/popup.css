@@ -1,7 +1,11 @@
 body { font-family: sans-serif; padding: 20px; width: 200px; background-color: #081939; color: #F0FFFF; font-family: sans-serif; }
 label { display: flex; align-items: center; gap: 10px; }
 .cl-toggle-switch {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px,0;
+    font-size: 20px;
 }
 .cl-switch {
 position: relative;
