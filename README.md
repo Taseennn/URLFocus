@@ -34,7 +34,7 @@
    * **Chrome:** `chrome://extensions/`
    * **Firefox:** `about:debugging#/runtime/this-firefox`
 
-3. Enable **Developer Mode** (Chrome) or **This Firefox** (Firefox).
+3. Enable **Developer Mode** (Chrome)
 
 4. 👉 **Pick the right manifest:**
    - For **Chrome**, rename `manifest-chrome.json` to `manifest.json` in the project folder.
