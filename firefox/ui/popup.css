@@ -1,4 +1,4 @@
-body { font-family: sans-serif; padding: 20px; width: 200px; background-color: #171b8f; color: azure; font-family: sans-serif; }
+body { font-family: sans-serif; padding: 20px; width: 200px; background-color: #171B8F; color: azure; font-family: sans-serif; }
 label { display: flex; align-items: center; gap: 10px; }
 /* The switch - the box around the slider */
 .cl-toggle-switch {
@@ -111,4 +111,30 @@ background-color: #bfdbda;
 
 .cl-switch > input:checked:disabled + span::after {
 background-color: #61b5b4;
+}
+
+#button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Button styling */
+.ButtonStyle {
+    background-color: #4c5cff; 
+    color: #ffffff; 
+    border: none; 
+    padding: 8px;
+    border-radius: 8px; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+.ButtonStyle:hover {
+    background-color: #6a78ff;
+    transform: translateY(-2px);
+}
+
+.ButtonStyle:active {
+    background-color: #3b44e6;
+    transform: translateY(0);
 }

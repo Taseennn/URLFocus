@@ -10,7 +10,7 @@ async function loadBlockedSites() {
   const { blockedSites } = await extensionAPI.storage.local.get({ blockedSites: [] });
   let id = 0;
   document.getElementById('blockedSites').innerHTML =
-    blockedSites.map((site, i) => `<li><span>${site}</span> <button id="remove=${i}">remove</button></li>`).join('');
+    blockedSites.map((site, i) => `<li class="RemoveButton"><span>${site}</span> <button id="remove=${i}">&times</button></li>`).join('');
 
 }
 
@@ -25,12 +25,19 @@ document.getElementById('blockedSites').addEventListener('click',async (event) =
   }
 });
 
-// save blocked sites when the save button is clicked
-document.getElementById('save').addEventListener('click', async () => {
-  const listItems = document.querySelectorAll('#blockedSites li span');
-  const blockedSites = Array.from(listItems).map(span => span.textContent.trim());
-  await extensionAPI.storage.local.set({ blockedSites });
-});
+// add site when the add button is clicked
+  document.getElementById('addSiteButton').addEventListener('click', async() => {
+    const input = document.getElementById('siteInput');
+    const site = input.value.trim();
+    if( !site ){ return; }
+
+    const { blockedSites } = await extensionAPI.storage.local.get({ blockedSites: [] });
+    blockedSites.push(site);
+    await extensionAPI.storage.local.set({ blockedSites });
+    
+    input.value = '';
+
+    loadBlockedSites();
+  });
 
 loadBlockedSites();
-
