@@ -1,4 +1,4 @@
-body { font-family: sans-serif; padding: 20px; width: 400px; background-color: #171b8f; color: azure; font-family: sans-serif; }
+body { font-family: sans-serif; padding: 20px; width: 400px; background-color: #081939; color: #F0FFFF; font-family: sans-serif; }
 
 #button {
     text-align: center;
@@ -7,7 +7,7 @@ body { font-family: sans-serif; padding: 20px; width: 400px; background-color: #
 
 /* Button styling */
 .ButtonStyle {
-    background-color: #4d5bff; 
+    background-color: #1A2A6F; 
     color: #ffffff; 
     border: none; 
     padding: 8px;
@@ -17,17 +17,17 @@ body { font-family: sans-serif; padding: 20px; width: 400px; background-color: #
 }
 
 .ButtonStyle:hover {
-    background-color: #6a78ff;
+    background-color: #2A3A9F;
     transform: translateY(-2px);
 }
 
 .ButtonStyle:active {
-    background-color: #3b44e6;
+    background-color: #0F1F66;
     transform: translateY(0);
 }
 
 #siteInput{
-    background-color: #4d5bff; 
+    background-color: #1A2A6F; 
     color: #ffffff; 
     border: none; 
     padding: 8px;
@@ -40,7 +40,7 @@ body { font-family: sans-serif; padding: 20px; width: 400px; background-color: #
     align-items: center;
     padding: 8px 12px;
     margin-bottom: 6px;
-    background-color: #2329a5;
+    background-color: #06172E;
     border-radius: 6px;
     color: #ffffff;
     font-size: 14px;
@@ -49,7 +49,7 @@ body { font-family: sans-serif; padding: 20px; width: 400px; background-color: #
 .RemoveButton button {
     background: transparent;
     border: none;
-    color: #ff4c4c;
+    color: #FF4C4C;
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
