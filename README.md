@@ -1,13 +1,20 @@
 # URLFocus
 
-**URLFocus** is a simple browser extension that automatically closes social media tabs when they are opened. It helps you stay focused by blocking distractions like Facebook, Twitter, and Instagram.
+**URLFocus** is a lightweight browser extension that automatically closes social media tabs when you open them, helping you stay focused by blocking distractions like Facebook, Twitter, and Instagram.
+
+
+Here is what the interface looks like:
+
+![URLFocus Popup](images/popup.png)
+
+![URLFocus Blocked Sites Page](images/manageSites.png)
 
 ---
 
 ## 📂 Files
 
-* **`manifest.json`** — Defines extension metadata, permissions, and the background service worker (FOR FIREFOX)
-* **`manifest-chrome.json`** — Defines extension metadata, permissions, and the background service worker (FOR CHROME)
+* Depending 
+* **`manifest.json`** — Defines extension metadata, permissions, and the background service worker
 * **`background-script.js`** — Contains the logic to detect and close social media tabs.
 
 ---
@@ -16,16 +23,17 @@
 
 * Runs in the background as a service worker.
 * Monitors newly opened tabs.
-* Closes tabs that match social media URLs instantly.
+* Closes tabs that match any URLs instantly.
+* Easily add and remove sites from your blocked sites list.
 
 ---
 
-## ⚙️ Installation (Development)
+## ⚙️ Installation Guide
 
 1. Clone or download this repository:
 
    ```bash
-   git clone https://github.com/Yabek9000/URLFocus
+   git clone https://github.com/Taseennn/URLFocus
    cd URLFocus
    ```
 
@@ -34,15 +42,34 @@
    * **Chrome:** `chrome://extensions/`
    * **Firefox:** `about:debugging#/runtime/this-firefox`
 
-3. Enable **Developer Mode** (Chrome) or **This Firefox** (Firefox).
+3. Enable **Developer Mode** (Chrome)
 
-4. 👉 **Pick the right manifest:**
-   - For **Chrome**, rename `manifest-chrome.json` to `manifest.json` in the project folder.
-   - For **Firefox**, no changes needed (the default `manifest.json` is correct).
+4. 👉 **Select the correct folder for your browser:**
+   * For **Chrome**, choose the `chrome/` subdirectory.   
+   * For **Firefox**, choose the `firefox/` subdirectory.
+
+
 
 5. Click **Load unpacked** (Chrome) or **Load Temporary Add-on** (Firefox) and select the project folder.
 
+**Chrome**
+![Chrome unpack](images/chromeunpack.png)
+
+**Firefox**
+![Firefox unpack](images/firefoxunpack.png)
+
 6. Open a social media site — the tab should close automatically.
+
+
+---
+
+## Manage Blocked Sites
+
+Use the **Manage Blocked Sites** button to easily add or remove sites.
+
+Here’s what the Manage Blocked Sites interface looks like:
+
+![URLFocus Blocked Sites Page](images/manageSites.png)
 
 ---
 
@@ -57,12 +84,8 @@
 * Snapchat
 * TikTok
 * Reddit
+* Any site you add!
 
-Edit `background-script.js` to add or remove sites:
-
-```js
-const blockedSites = ["facebook.com", "twitter.com", "instagram.com"];
-```
 
 ## 📄 License
 
