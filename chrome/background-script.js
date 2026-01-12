@@ -19,11 +19,22 @@ extensionAPI.runtime.onInstalled.addListener(() => {
   });
 });
 
+// Check if storage has changed, and close new added urls
+extensionAPI.storage.onChanged.addListener((changes, area) => {
+  if (area === 'local' && changes.blockedSites) {
+    blockedSites = changes.blockedSites.newValue;
+    extensionAPI.tabs.query({}, closeTabs);
+  }
+});
+
 // get blocked sites from storage
 let blockedSites = [];
+
 extensionAPI.storage.local.get({ blockedSites: [] }, (result) => {
-  blockedSites = result.blockedSites;
-});
+    blockedSites = result.blockedSites;
+    console.log(blockedSites);
+  });
+
 
 let blockingEnabled = true;
 extensionAPI.storage.local.get({ enabled: true }, ({ enabled }) => {
