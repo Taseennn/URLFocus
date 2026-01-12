@@ -22,7 +22,7 @@ extensionAPI.runtime.onInstalled.addListener(() => {
 
 // get blocked sites from storage
 let blockedSites = [];
-extensionAPI.storage.local.get({ blockedSites: DEFAULT_BLOCKEDSITES }, (result) => {
+extensionAPI.storage.local.get({ blockedSites: [] }, (result) => {
   blockedSites = result.blockedSites;
 });
 
