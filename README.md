@@ -2,7 +2,12 @@
 
 **URLFocus** is a lightweight browser extension that automatically closes social media tabs when you open them, helping you stay focused by blocking distractions like Facebook, Twitter, and Instagram.
 
+
+Here is what the interface looks like:
+
 ![URLFocus Popup](images/popup.png)
+
+![URLFocus Blocked Sites Page](images/manageSites.png)
 
 ---
 
@@ -47,7 +52,10 @@
 
 5. Click **Load unpacked** (Chrome) or **Load Temporary Add-on** (Firefox) and select the project folder.
 
+**Chrome**
 ![Chrome unpack](images/chromeunpack.png)
+
+**Firefox**
 ![Firefox unpack](images/firefoxunpack.png)
 
 6. Open a social media site — the tab should close automatically.
@@ -60,6 +68,7 @@
 Use the **Manage Blocked Sites** button to easily add or remove sites.
 
 Here’s what the Manage Blocked Sites interface looks like:
+
 ![URLFocus Blocked Sites Page](images/manageSites.png)
 
 ---
